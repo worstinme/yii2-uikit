@@ -30,7 +30,6 @@ class ActiveForm extends \yii\widgets\ActiveForm
 
     public $validate_scripts = true;
     public $validate_scripts_inform = false;
-
     
     public function run()
     {
@@ -63,7 +62,7 @@ class ActiveForm extends \yii\widgets\ActiveForm
     public function init()
     {
         if (!in_array($this->layout, ['default', 'horizontal', 'inline'])) {
-            throw new InvalidConfigException('Invalid layout type: ' . $this->layout);
+            throw new InvalidConfigException('Invalid layout of type: ' . $this->layout);
         }
 
         $classes = ['default'=>' uk-form-stacked', 'horizontal'=>' uk-form-horizontal', 'inline'=>' uk-form-inline'];
