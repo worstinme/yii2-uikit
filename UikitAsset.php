@@ -11,7 +11,7 @@ class UikitAsset extends AssetBundle
     public $sourcePath = '@vendor/bower/uikit';
     public $css = [
         'css/uikit.css',
-        'css/components/form-advanced.css',
+        'css/components/form-advanced.min.css',
     ];
     public $js = [
         'js/uikit.min.js',

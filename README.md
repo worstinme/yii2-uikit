@@ -18,7 +18,6 @@ or add
 
 ```
 "worstinme/yii2-uikit": "*"
-
 ```
 to the require section of your `composer.json` file.
 
