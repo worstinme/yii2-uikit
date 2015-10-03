@@ -1,72 +1,93 @@
 <?php
-
+/**
+ * @link http://www.yiiframework.com/
+ * @copyright Copyright (c) 2008 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
 namespace worstinme\uikit;
 
 use Yii;
 use yii\helpers\Html;
 use yii\base\InvalidConfigException;
-use yii\helpers\Json;
-use yii\widgets\ActiveFormAsset;
 
 class ActiveForm extends \yii\widgets\ActiveForm
 {
-    /**
-     * @var string the default field class name when calling [[field()]] to create a new field.
-     * @see fieldConfig
-     */
+
     public $fieldClass = 'worstinme\uikit\ActiveField';
     /**
-     * @var array HTML attributes for the form tag. Default is `['role' => 'form']`.
-     */
-    public $options = ['role' => 'form'];
-    /**
-     * @var string the form layout. Either 'default', 'horizontal' or 'inline'.
-     * By choosing a layout, an appropriate default field configuration is applied. This will
-     * render the form fields with slightly different markup for each layout. You can
-     * override these defaults through [[fieldConfig]].
-     * @see \yii\bootstrap\ActiveField for details on Bootstrap 3 field configuration
+     * @var string the form layout. Either 'default', 'horizontal' or 'stacked'.
      */
     public $layout = 'default';
+    /**
+     * @var string the form field size. Either 'large', 'small'.
+     */
+    public $field_size = false; 
+    /**
+     * @var string the form field width. Either 'full','large','medium', 'small', 'mini'.
+     */
+    public $field_width = false;
 
-    public $validate_scripts = true;
-    public $validate_scripts_inform = false;
-    
-    public function run()
-    {
-        if (!empty($this->_fields)) {
-            throw new InvalidCallException('Each beginField() should have a matching endField() call.');
-        }
-        if ($this->enableClientScript) {
-            $id = $this->options['id'];
-            $options = Json::htmlEncode($this->getClientOptions());
-            $attributes = Json::htmlEncode($this->attributes);
-            $view = $this->getView();
-            ActiveFormAsset::register($view);
-            if ($this->validate_scripts) {
-            
-                if ($this->validate_scripts_inform) {
-                    echo "<script type=\"text/javascript\">jQuery(document).ready(function () { jQuery('#$id').yiiActiveForm($attributes, $options);});</script>";
-                }
-                else {
-                    $view->registerJs("jQuery('#$id').yiiActiveForm($attributes, $options);");
-                }
+    public $inputOptions = [];
 
-            }
-        }
-        echo Html::endForm();
-    }
- 
     /**
      * @inheritdoc
      */
     public function init()
     {
-        if (!in_array($this->layout, ['default', 'horizontal', 'inline'])) {
-            throw new InvalidConfigException('Invalid layout of type: ' . $this->layout);
+        if (!in_array($this->layout, ['default', 'horizontal', 'stacked'])) {
+            throw new InvalidConfigException('Invalid layout type: ' . $this->layout);
         }
 
-        $classes = ['default'=>' uk-form-stacked', 'horizontal'=>' uk-form-horizontal', 'inline'=>' uk-form-inline'];
-            Html::addCssClass($this->options, 'uk-form' .  $classes[$this->layout]);
+
+
+        Html::addCssClass($this->options, 'uk-form');
+
+        if ($this->layout !== 'default') {
+            Html::addCssClass($this->options, 'uk-form-' . $this->layout);
+        }
+
+        if ($this->field_size) {
+
+            if (!in_array($this->field_size, ['large', 'small'])) {
+                throw new InvalidConfigException('Invalid size: ' . $this->layout.'. It must be large or small');
+            }
+
+            Html::addCssClass($this->inputOptions, 'uk-form-' . $this->field_size);
+                     
+        }
+
+        if ($this->field_size) {
+            if (!in_array($this->field_size, ['large', 'small'])) {
+                throw new InvalidConfigException('Invalid size: ' . $this->layout.'. It must be large & small');
+            }
+            else {
+                Html::addCssClass($this->inputOptions, 'uk-form-' . $this->field_size);
+            }                       
+        }
+
+        if ($this->field_width) {
+            if (!in_array($this->field_width, ['full','large','medium', 'small', 'mini'])) {
+                throw new InvalidConfigException('Invalid width: ' . $this->field_width.'. It must be full, large, medium, small or mini');
+            }
+            else {
+                Html::addCssClass($this->inputOptions, $this->field_width != 'full' ? 'uk-form-width-' . $this->field_width : 'uk-width-1-1');
+            }                       
+        }
+
+        if (isset($this->inputOptions['class'])) {
+            $this->fieldConfig['inputOptions'] = ['class' => $this->inputOptions['class']];
+        }
+
+        
+
+
+
         parent::init();
     }
+
+    public function field($model, $attribute, $options = [])
+    {
+        return parent::field($model, $attribute, $options);
+    }
+
 }
