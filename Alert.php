@@ -1,7 +1,7 @@
 <?php
 
 
-namespace worstinme\uikit\widgets;
+namespace worstinme\uikit;
 
 class Alert extends \yii\base\Widget
 {
