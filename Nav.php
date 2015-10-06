@@ -12,7 +12,7 @@ class Nav extends Widget
 
     public $items = [];
 
-    public $encodeLabels = true;
+    public $encodeLabels = false;
 
     public $activateItems = true;
 
