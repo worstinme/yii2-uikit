@@ -4,16 +4,16 @@ namespace worstinme\uikit\assets;
 
 use yii\web\AssetBundle;
 
-class NestableFlat extends AssetBundle
+class Notify extends AssetBundle
 {
     public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
-        'css'=>'css/components/nestable.almost-flat.min.css',
+        'css'=>'css/components/notify.min.css',
     ];
 
     public $js = [
-        'js'=>'js/components/nestable.min.js',
+        'js'=>'js/components/notify.min.js',
     ];
 
     public $depends = [

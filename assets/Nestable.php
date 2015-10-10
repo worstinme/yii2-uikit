@@ -9,7 +9,7 @@ class Nestable extends AssetBundle
     public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
-        'css'=>'css/components/nestable.almost-flat.css',
+        'css'=>'css/components/nestable.min.css',
     ];
 
     public $js = [
