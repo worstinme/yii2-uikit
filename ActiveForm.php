@@ -8,7 +8,9 @@ namespace worstinme\uikit;
 
 use Yii;
 use yii\helpers\Html;
+use yii\helpers\Json;
 use yii\base\InvalidConfigException;
+use yii\widgets\ActiveFormAsset;
 
 class ActiveForm extends \yii\widgets\ActiveForm
 {
@@ -28,6 +30,8 @@ class ActiveForm extends \yii\widgets\ActiveForm
     public $field_width = false;
 
     public $inputOptions = [];
+
+    public $scripts_inform = false;
 
     /**
      * @inheritdoc
@@ -84,6 +88,31 @@ class ActiveForm extends \yii\widgets\ActiveForm
 
         parent::init();
     }
+
+  /*  public function run()
+    {
+        if (!empty($this->_fields)) {
+            throw new InvalidCallException('Each beginField() should have a matching endField() call.');
+        }
+        if ($this->enableClientScript) {
+            $id = $this->options['id'];
+            $options = Json::htmlEncode($this->getClientOptions());
+            $attributes = Json::htmlEncode($this->attributes);
+            $view = $this->getView();
+            ActiveFormAsset::register($view);
+            if ($this->enableClientValidation) {
+            
+                if ($this->scripts_inform) {
+                    echo "<script type=\"text/javascript\">jQuery(document).ready(function () { jQuery('#$id').yiiActiveForm($attributes, $options);});</script>";
+                }
+                else {
+                    $view->registerJs("jQuery('#$id').yiiActiveForm($attributes, $options);");
+                }
+
+            }
+        }
+        echo Html::endForm();
+    } */
 
     public function field($model, $attribute, $options = [])
     {
