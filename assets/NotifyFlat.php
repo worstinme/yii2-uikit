@@ -9,11 +9,11 @@ class NotifyFlat extends AssetBundle
     public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
-        'css'=>'css/components/notify.almost-flat.min.css',
+        'css/components/notify.almost-flat.min.css',
     ];
 
     public $js = [
-        'js'=>'js/components/notify.min.js',
+        'js/components/notify.min.js',
     ];
 
     public $depends = [

@@ -13,7 +13,7 @@ class Parallax extends AssetBundle
     ];
 
     public $js = [
-        'js'=>'js/components/parallax.min.js',
+        'js/components/parallax.min.js',
     ];
 
     public $depends = [

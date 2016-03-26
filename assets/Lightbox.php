@@ -13,7 +13,7 @@ class Lightbox extends AssetBundle
     ];
 
     public $js = [
-        'js'=>'js/components/lightbox.min.js',
+        'js/components/lightbox.min.js',
     ];
 
     public $depends = [

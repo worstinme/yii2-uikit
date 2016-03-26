@@ -13,7 +13,7 @@ class DinamicGrid extends AssetBundle
     ];
 
     public $js = [
-        'js'=>'js/components/grid.min.js',
+        'js/components/grid.min.js',
     ];
 
     public $depends = [
