@@ -28,6 +28,8 @@ class Nav extends Widget
 
     public $containerOptions = [];
 
+    public $navClass = 'uk-nav';
+
     /**
      * Initializes the widget.
      */
@@ -40,7 +42,7 @@ class Nav extends Widget
         if ($this->params === null) {
             $this->params = $_GET;
         }
-        Html::addCssClass($this->options, $this->navbar ? 'uk-navbar-nav' : 'uk-nav');
+        Html::addCssClass($this->options, $this->navbar ? 'uk-navbar-nav' : $this->navClass);
         if ($this->accordion) {
             $this->options['data-uk-nav'] = $this->jsonClientOptions();
         }
@@ -144,8 +146,10 @@ class Nav extends Widget
             }
             unset($item['url']['#']);
             if (count($item['url']) > 1) {
-                foreach (array_splice($item['url'], 1) as $name => $value) {
-                    if (!isset($this->params[$name]) || $this->params[$name] != $value) {
+                $params = $item['url'];
+                unset($params[0]);
+                foreach ($params as $name => $value) {
+                    if ($value !== null && (!isset($this->params[$name]) || $this->params[$name] != $value)) {
                         return false;
                     }
                 }
