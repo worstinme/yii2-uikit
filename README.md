@@ -30,11 +30,11 @@ For example, including main UiKit css & js files in any view files
 Uikit Slideshow widget examples:
  * render slideshow from webroot path with images
 ```php
-<?= worstinme\uikit\widgets\Slideshow::widget(['path' => '/images/somefolder/']) ?>
+<?= \worstinme\uikit\widgets\Slideshow::widget(['path' => '/images/somefolder/']) ?>
 ```
  * render slideshow with custom slides
 ```php
-<?= worstinme\uikit\widgets\Slideshow::widget(['slides' => [
+<?= \worstinme\uikit\widgets\Slideshow::widget(['slides' => [
 		'<div class="slide">Any content with some <a href="#">button</a> e.g.</div>'
 		'<div class="pam_pam_slide-two">Another content with some <a href="#">button</a> e.g.</div>'
 	]
@@ -42,7 +42,7 @@ Uikit Slideshow widget examples:
 ```
  * render slideshow with overlays 
 ```php
-<?= worstinme\uikit\widgets\Slideshow::widget(['items' => [
+<?= \worstinme\uikit\widgets\Slideshow::widget(['items' => [
 		['img'=>'/link/to/img.jpg','overlay'=>'Any content with some <a href="#">button</a> e.g.'],
 		['img'=>'/link/to/img.jpg','overlay'=>'Any content with some <a href="#">button</a> e.g.'],
 	]
