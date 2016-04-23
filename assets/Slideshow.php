@@ -11,6 +11,7 @@ class Slideshow extends AssetBundle
     public $css = [
         'css/components/slideshow.min.css',
         'css/components/slidenav.min.css',
+        'css/components/dotnav.min.css',
     ];
 
     public $js = [
