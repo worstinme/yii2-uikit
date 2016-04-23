@@ -1,19 +1,16 @@
-# yii2-uikit
+# yii2-uikit extensions for Yii2
 
-[UiKit](http://getuikit.com/) extensions for Yii2
+Widgets & assets for a lightweight and modular front-end framework [UiKit](http://getuikit.com/) 
 
 
-Installation
-------------
+Installation of Yii2 Uikit Extension
+------------------------------------
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
-
-Either run
 
 ```
 php composer.phar require --prefer-dist worstinme/yii2-uikit
 ```
-
 or add
 
 ```
@@ -22,13 +19,30 @@ or add
 to the require section of your `composer.json` file.
 
 
-Usage
-----
+Usage exaple:
+-------------
 
-For example, the following
-single line of code in a view file would render a Bootstrap Progress plugin:
+For example, including main UiKit css & js files in any view files
 
 ```php
-<?= worstinme\uikit\Progress::widget(['percent' => 60, 'label' => 'test']) ?>
+\worstinme\uikit\UikitAsset::register($this);
+```
+Uikit Slideshow widget examples:
+```php
 
+\\render slideshow from webroot path with images
+echo worstinme\uikit\widgets\Slideshow::widget(['path' => '/images/somefolder/']);
+
+\\render slideshow with custom slides
+echo worstinme\uikit\widgets\Slideshow::widget(['slides' => [
+		'<div class="slide">Any content with some <a href="#">button</a> e.g.</div>'
+		'<div class="pam_pam_slide-two">Another content with some <a href="#">button</a> e.g.</div>'
+	]
+]);
+\\render slideshow with overlays 
+echo worstinme\uikit\widgets\Slideshow::widget(['items' => [
+		['img'=>'/link/to/img.jpg','overlay'=>'Any content with some <a href="#">button</a> e.g.'],
+		['img'=>'/link/to/img.jpg','overlay'=>'Any content with some <a href="#">button</a> e.g.'],
+	]
+]);
 ```
