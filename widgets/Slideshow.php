@@ -10,8 +10,17 @@ use yii\helpers\FileHelper;
 class Slideshow extends Widget
 {
 
-    public $images = [];
     public $path;
+    public $images = [];
+    public $slides = [];
+
+    public $items = [];
+
+    /*  item => [
+            'img'=>'/img.jpg', from @webroot
+            'overlay'=>'',
+            'item'=>'',
+        ]   */
 
     public function init()
     {
@@ -23,21 +32,33 @@ class Slideshow extends Widget
             if (is_dir($dir)) {
                 $files = FileHelper::findFiles($webroot.DIRECTORY_SEPARATOR.ltrim($this->path,DIRECTORY_SEPARATOR));
                 foreach ($files as $file) {
-                    $this->images[] = str_replace($webroot, "", $file);
+                    $this->items[] = ['img'=>str_replace($webroot, "", $file)];
                 }
             }
-            
         }
+
+        if (count($this->images)) {
+            foreach ($this->images as $image) {
+                $this->items[] = ['img'=>$image];
+            }
+        }
+
+        if (count($this->slides)) {
+            foreach ($this->slides as $slide) {
+                $this->items[] = ['item'=>$slide];
+            }
+        }
+
         parent::init();
     }
 
     public function run()
     {
 
-        if (count($this->images)) {
+        if (count($this->items)) {
 
             return $this->render('slideshow',[
-                'images'=>$this->images,
+                'items'=>$this->items,
             ]); 
 
         }
