@@ -4,8 +4,16 @@ use yii\helpers\Html;
 
 \worstinme\uikit\assets\Slideshow::register($this);
 
+$params = [];
+
+if ($this->context->height !== null) {
+	$params['height'] = $this->context->height;
+}
+
+$params = \yii\helpers\Json::encode($params);
+
 ?>
-<div class="uk-slidenav-position" data-uk-slideshow data-uk-check-display>
+<div class="uk-slidenav-position" data-uk-slideshow='<?=$params?>' data-uk-check-display>
     <ul class="uk-slideshow">
 	<?php foreach ($items as $key => $item): ?>
 		<li>

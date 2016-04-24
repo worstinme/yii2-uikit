@@ -13,7 +13,7 @@ class Slideshow extends Widget
     public $path;
     public $images = [];
     public $slides = [];
-
+    public $height;
     public $items = [];
 
     /*  item => [
