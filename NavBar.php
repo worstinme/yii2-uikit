@@ -68,8 +68,10 @@ class NavBar extends Widget
      */
     public function run()
     {
+        if ($this->offcanvas) {
+            echo Html::endTag('div');
+        }
         
-        echo Html::endTag('div');
         echo Html::endTag('nav');
     }
 }
