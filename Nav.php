@@ -96,6 +96,9 @@ class Nav extends Widget
         $label = $this->encodeLabels ? Html::encode($item['label']) : $item['label'];
         $options = ArrayHelper::getValue($item, 'options', []);
         $items = ArrayHelper::getValue($item, 'items');
+        if (!count($items)) {
+            $items = null;
+        }
         $url = Url::to(ArrayHelper::getValue($item, 'url', false));
         $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
         if (isset($item['active'])) {
@@ -106,15 +109,14 @@ class Nav extends Widget
         if ($active) {
             Html::addCssClass($options, 'uk-active');
         }
-        if ($items !== null && is_array($items)) {
+        if ($items !== null && is_array($items) && count($items)) {
             Html::addCssClass($options, 'uk-parent');
 
             if ($this->navbar) {
-                $options['data-uk-dropdown'] = '';
+                $options['data-uk-dropdown'] = "{pos:'bottom-center'}";
                 $items = self::widget(['items' => $items,'containerOptions'=>['class'=>'uk-dropdown uk-dropdown-navbar'], 'options' => ['class' => 'uk-nav-navbar']]);
             }
             else {
-                
                 $items = self::widget(['items' => $items, 'options' => ['class' => 'uk-nav-sub']]);
             }            
         }
