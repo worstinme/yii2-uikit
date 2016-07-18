@@ -113,7 +113,7 @@ class Nav extends Widget
             Html::addCssClass($options, 'uk-parent');
 
             if ($this->navbar) {
-                $options['data-uk-dropdown'] = "{pos:'bottom-center'}";
+                $options['data-uk-dropdown'] = "{pos:'bottom'}";
                 $items = self::widget(['items' => $items,'containerOptions'=>['class'=>'uk-dropdown uk-dropdown-navbar'], 'options' => ['class' => 'uk-nav-navbar']]);
             }
             else {
