@@ -1,7 +1,8 @@
 <?php
 
-
 namespace worstinme\uikit;
+
+use yii\helpers\Html;
 
 class Alert extends \yii\base\Widget
 {
@@ -16,6 +17,7 @@ class Alert extends \yii\base\Widget
 
     public $options;
 
+    public $type;
 
     public $closeButton = [];
 
@@ -24,27 +26,48 @@ class Alert extends \yii\base\Widget
         parent::init();
 
         $session = \Yii::$app->getSession();
-        $flashes = $session->getAllFlashes();
-        $appendCss = isset($this->options['class']) ? ' ' . $this->options['class'] : '';
 
-        foreach ($flashes as $type => $data) {
-            if (isset($this->alertTypes[$type])) {
-                $data = (array) $data;
-                foreach ($data as $message) {
-                    /* initialize css class for each alert box */
-                    $this->options['class'] = $this->alertTypes[$type] . $appendCss;
+        if (!empty($this->options['data']) && is_array($this->options['data'])) {
+            $this->options['data']['uk-alert'] = true;
+        }
+        else {
+            $this->options['data'] = ['uk-alert'=>''];
+        }
 
-                    /* assign unique id to each alert box */
-                    $this->options['id'] = $this->getId() . '-' . $type;
+        $this->options['id'] = $this->getId();
 
-                    echo '<div id="'.$this->options['id'].'" class="uk-alert '.$this->options['class'].'" data-uk-alert>';
-                    echo '<a href="" class="uk-alert-close uk-close"></a>';
-                    echo '<p>'.$message.'</p>';
-                    echo '</div>';
+        if (isset($this->options['class'])) {
+            $this->options['class'] .= ' uk-alert';
+        }
+        else {
+            $this->options['class'] = 'uk-alert';
+        }
+
+        if ($this->type === null) {
+            
+            $flashes = $session->getAllFlashes();
+
+            foreach ($flashes as $type => $data) {
+                if (isset($this->alertTypes[$type])) {
+                    $data = (array) $data;
+                    foreach ($data as $message) {
+                        $this->options['class'] .= ' '.$this->alertTypes[$type];
+                        echo Html::beginTag('div',$this->options);
+                        echo Html::a('', $url = null, ['class' => 'uk-alert-close uk-close']);
+                        echo '<p>'.$message.'</p>';
+                        echo Html::endTag('div');
+                    }
+
+                    $session->removeFlash($type);
                 }
-
-                $session->removeFlash($type);
             }
+
+        }
+        elseif(($message = $session->getFlash($this->type)) !== null) {
+            echo Html::beginTag('div',$this->options);
+            echo Html::a('', $url = null, ['class' => 'uk-alert-close uk-close']);
+            echo Html::tag('p',$message);
+            echo Html::endTag('div');
         }
     }
 }
