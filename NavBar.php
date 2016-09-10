@@ -70,7 +70,7 @@ class NavBar extends Widget
     public function run()
     {
         
-        if ($this->offcanvas) {
+        if ($this->container) {
             echo Html::endTag('div');
         } 
         echo Html::endTag('nav');
