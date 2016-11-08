@@ -49,7 +49,7 @@ class ActiveField extends \yii\widgets\ActiveField
         $view->registerJs($script,$view::POS_READY);
         \worstinme\uikit\assets\Notify::register($view);
 
-        $options = array_merge($this->inputOptions, $options, ['class'=>'uk-form-small uk-form-width-large']);
+        $options = array_merge($this->inputOptions, $options);
         $this->adjustLabelFor($options);
         $this->parts['{input}'] = Html::activeTextInput($this->model, $this->attribute, $options);
         return $this;

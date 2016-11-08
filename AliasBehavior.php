@@ -4,7 +4,6 @@ namespace worstinme\uikit;
 
 class AliasBehavior extends \yii\behaviors\SluggableBehavior
 {
-
     protected function isNewSlugNeeded()
     {
     	if ($this->owner->isAttributeChanged($this->slugAttribute)) {
