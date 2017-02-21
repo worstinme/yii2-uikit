@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class NestableFlat extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower/uikit';
+    public $sourcePath = '@vendor/uikit/uikit';
 
     public $css = [
         'css/components/nestable.almost-flat.min.css',

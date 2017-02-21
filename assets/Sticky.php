@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class Sticky extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower/uikit';
+    public $sourcePath = '@vendor/uikit/uikit';
 
     public $css = [
         'css/components/sticky.min.css',
