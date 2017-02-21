@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class GridParallax extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower/uikit/src';
+    public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
         

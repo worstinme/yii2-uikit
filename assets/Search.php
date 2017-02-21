@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class Search extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower/uikit/src';
+    public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
         'css/components/search.min.css',

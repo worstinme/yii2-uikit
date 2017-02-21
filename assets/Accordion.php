@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class Accordion extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower/uikit/src';
+    public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
         'css/components/accordion.min.css',
