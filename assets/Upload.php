@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class Upload extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower/uikit';
+    public $sourcePath = '@vendor/bower/uikit/src';
 
     public $css = [
         'css/components/placeholder.min.css',

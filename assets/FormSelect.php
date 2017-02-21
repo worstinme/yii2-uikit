@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class FormSelect extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower/uikit';
+    public $sourcePath = '@vendor/bower/uikit/src';
 
     public $css = [
         'css/components/form-select.min.css',
