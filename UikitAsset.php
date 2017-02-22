@@ -7,11 +7,11 @@ use yii\web\AssetBundle;
 
 class UikitAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/uikit/uikit';
+    public $sourcePath = '@vendor/uikit/uikit/src/less';
 
     public $css = [
-        'css/uikit.min.css',
-        'css/components/form-advanced.min.css',
+        'css/uikit.less',
+        'css/components/form-advanced.less',
     ];
 
     public $js = [
