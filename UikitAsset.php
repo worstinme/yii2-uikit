@@ -7,15 +7,15 @@ use yii\web\AssetBundle;
 
 class UikitAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/uikit/uikit/src/less';
+    public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
-        'css/uikit.less',
-        'css/components/form-advanced.less',
+        'css/uikit.css',
+        'css/components/form-advanced.css',
     ];
 
     public $js = [
-        'js/uikit.min.js',
+        'js/uikit.js',
     ];
 
     public $depends = [

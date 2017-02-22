@@ -6,14 +6,14 @@ use yii\web\AssetBundle;
 
 class Accordion extends AssetBundle
 {
-    public $sourcePath = '@vendor/uikit/uikit';
+    public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
-        'css/components/accordion.min.css',
+        'css/components/accordion.css',
     ];
 
     public $js = [
-        'js/components/accordion.min.js',
+        'js/components/accordion.js',
     ];
 
     public $depends = [

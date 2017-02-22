@@ -6,12 +6,12 @@ use yii\web\AssetBundle;
 
 class Upload extends AssetBundle
 {
-    public $sourcePath = '@vendor/uikit/uikit';
+    public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
-        'css/components/placeholder.min.css',
-        'css/components/progress.min.css',
-        'css/components/form-file.min.css',
+        'css/components/placeholder.css',
+        'css/components/progress.css',
+        'css/components/form-file.css',
     ];
 
     public $js = [

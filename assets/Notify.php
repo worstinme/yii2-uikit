@@ -6,10 +6,10 @@ use yii\web\AssetBundle;
 
 class Notify extends AssetBundle
 {
-    public $sourcePath = '@vendor/uikit/uikit';
+    public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
-        'css/components/notify.min.css',
+        'css/components/notify.css',
     ];
 
     public $js = [

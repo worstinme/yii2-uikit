@@ -6,12 +6,12 @@ use yii\web\AssetBundle;
 
 class Slider extends AssetBundle
 {
-    public $sourcePath = '@vendor/uikit/uikit';
+    public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
-        'css/components/slidenav.min.css',
-        'css/components/slider.min.css',
-        'css/components/dotnav.min.css',
+        'css/components/slidenav.css',
+        'css/components/slider.css',
+        'css/components/dotnav.css',
     ];
 
     public $js = [

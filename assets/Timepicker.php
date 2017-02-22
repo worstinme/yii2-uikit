@@ -6,10 +6,10 @@ use yii\web\AssetBundle;
 
 class Timepicker extends AssetBundle
 {
-    public $sourcePath = '@vendor/uikit/uikit';
+    public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
-        'css/components/timepicker.min.css',
+        'css/components/timepicker.css',
     ];
 
     public $js = [

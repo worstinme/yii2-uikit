@@ -6,12 +6,12 @@ use yii\web\AssetBundle;
 
 class Slideshow extends AssetBundle
 {
-    public $sourcePath = '@vendor/uikit/uikit';
+    public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
-        'css/components/slideshow.min.css',
-        'css/components/slidenav.min.css',
-        'css/components/dotnav.min.css',
+        'css/components/slideshow.css',
+        'css/components/slidenav.css',
+        'css/components/dotnav.css',
     ];
 
     public $js = [

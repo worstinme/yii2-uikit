@@ -6,14 +6,14 @@ use yii\web\AssetBundle;
 
 class Autocomplete extends AssetBundle
 {
-    public $sourcePath = '@vendor/uikit/uikit';
+    public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
-        'css/components/autocomplete.min.css',
+        'css/components/autocomplete.css',
     ];
 
     public $js = [
-        'js/components/autocomplete.min.js',
+        'js/components/autocomplete.js',
     ];
 
     public $depends = [

@@ -6,10 +6,10 @@ use yii\web\AssetBundle;
 
 class FormSelect extends AssetBundle
 {
-    public $sourcePath = '@vendor/uikit/uikit';
+    public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
-        'css/components/form-select.min.css',
+        'css/components/form-select.css',
     ];
 
     public $js = [

@@ -6,10 +6,10 @@ use yii\web\AssetBundle;
 
 class NotifyFlat extends AssetBundle
 {
-    public $sourcePath = '@vendor/uikit/uikit';
+    public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
-        'css/components/notify.almost-flat.min.css',
+        'css/components/notify.almost-flat.css',
     ];
 
     public $js = [

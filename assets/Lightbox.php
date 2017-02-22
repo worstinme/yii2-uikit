@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class Lightbox extends AssetBundle
 {
-    public $sourcePath = '@vendor/uikit/uikit';
+    public $sourcePath = '@vendor/bower/uikit';
 
     public $css = [
         
