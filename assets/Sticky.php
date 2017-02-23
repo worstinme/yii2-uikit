@@ -6,10 +6,10 @@ use yii\web\AssetBundle;
 
 class Sticky extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower/uikit';
+    public $sourcePath = '@worstinme/uikit/uikit';
 
     public $css = [
-        'css/components/sticky.css',
+        'css/components/sticky.min.css',
     ];
 
     public $js = [

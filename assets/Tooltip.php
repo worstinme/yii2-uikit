@@ -6,10 +6,10 @@ use yii\web\AssetBundle;
 
 class Tooltip extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower/uikit';
+    public $sourcePath = '@worstinme/uikit/uikit';
 
     public $css = [
-        'css/components/tooltip.css',
+        'css/components/tooltip.min.css',
     ];
 
     public $js = [

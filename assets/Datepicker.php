@@ -6,10 +6,10 @@ use yii\web\AssetBundle;
 
 class Datepicker extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower/uikit';
+    public $sourcePath = '@worstinme/uikit/uikit';
 
     public $css = [
-        'css/components/datepicker.css',
+        'css/components/datepicker.min.css',
     ];
 
     public $js = [

@@ -6,10 +6,10 @@ use yii\web\AssetBundle;
 
 class Nestable extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower/uikit';
+    public $sourcePath = '@worstinme/uikit/uikit';
 
     public $css = [
-        'css/components/nestable.css',
+        'css/components/nestable.min.css',
     ];
 
     public $js = [

@@ -6,10 +6,10 @@ use yii\web\AssetBundle;
 
 class Search extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower/uikit';
+    public $sourcePath = '@worstinme/uikit/uikit';
 
     public $css = [
-        'css/components/search.css',
+        'css/components/search.min.css',
     ];
 
     public $js = [

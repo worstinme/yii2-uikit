@@ -6,10 +6,10 @@ use yii\web\AssetBundle;
 
 class Password extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower/uikit';
+    public $sourcePath = '@worstinme/uikit/uikit';
 
     public $css = [
-        'css/components/form-password.css',
+        'css/components/form-password.min.css',
     ];
 
     public $js = [

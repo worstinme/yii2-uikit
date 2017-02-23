@@ -6,10 +6,10 @@ use yii\web\AssetBundle;
 
 class Slideset extends AssetBundle
 {
-     public $sourcePath = '@vendor/bower/uikit';
+     public $sourcePath = '@worstinme/uikit/uikit';
 
     public $css = [
-        'css/components/slidenav.css',
+        'css/components/slidenav.min.css',
     ];
 
     public $js = [
