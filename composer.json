@@ -15,8 +15,7 @@
         }
 	],
 	"require": {
-        "yiisoft/yii2": ">=2.0.6",
-	"bower-asset/uikit":">=2.22.0"
+        "yiisoft/yii2": ">=2.0.6"
     },
 	"autoload": {
 		"psr-4": {
