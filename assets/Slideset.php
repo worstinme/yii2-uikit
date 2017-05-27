@@ -10,6 +10,7 @@ class Slideset extends AssetBundle
 
     public $css = [
         'css/components/slidenav.min.css',
+        'css/components/dotnav.min.css',
     ];
 
     public $js = [
