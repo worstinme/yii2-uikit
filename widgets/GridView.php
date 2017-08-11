@@ -13,7 +13,6 @@ class GridView extends \yii\grid\GridView
 	const FORMATTER_INTEGER = 'Integer';
 	// TODO: остальные форматы можно посмотреть в классе \yii\i18n\Formatter и при необходимости добавить
 	const FORMATTER_SEPARATOR_DEFAULT = ' ';
-
 	public static function getTotal($provider, $fieldName, $format = null, $separator = null)
 	{
 		$value = 0;
