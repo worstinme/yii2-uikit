@@ -3242,6 +3242,8 @@
             element.on('click.uk.offcanvas swipeRight.uk.offcanvas swipeLeft.uk.offcanvas', function(e) {
 
                 var target = UI.$(e.target);
+                
+                if (target.parents('.uk-offcanvas-swipe-off').length) return;
 
                 if (!e.type.match(/swipe/)) {
 
