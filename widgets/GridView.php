@@ -2,6 +2,8 @@
 
 namespace worstinme\uikit\widgets;
 
+use yii\helpers\ArrayHelper;
+
 class GridView extends \yii\grid\GridView
 {
 	public $tableOptions = ['class' => 'uk-table uk-form uk-table-condensed uk-table-hover'];
