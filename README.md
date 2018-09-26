@@ -22,7 +22,7 @@ You have to set in your project's composer.json to use this package, because of 
 
 
 ```
-composer require --prefer-dist worstinme/yii2-uikit:"@dev"
+composer require --prefer-dist worstinme/yii2-uikit:"dev-master"
 ```
 or add
 
