@@ -8,13 +8,26 @@ Installation of Yii2 Uikit3 Extension
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/). Just run
 
+You have to set in your project's composer.json to use this package, because of Uikit 3 RC version.
+
+```json
+{
+    ...
+    "minimum-stability": "dev",
+    "prefer-stable":true,
+    ...
+}
+    
+```
+
+
 ```
 composer require --prefer-dist worstinme/yii2-uikit:"@dev"
 ```
 or add
 
 ```
-"worstinme/yii2-uikit": "@dev"
+"worstinme/yii2-uikit": "dev-master"
 ```
 to the require section of your `composer.json` file.
 

@@ -9,7 +9,6 @@
         "issues": "https://github.com/worstinme/yii2-uikit/issues"
 	},
 	"minimum-stability": "dev",
-	"prefer-stable":true,
 	"authors": [
         {
             "name": "Evgeny Zakirov",
