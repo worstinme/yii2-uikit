@@ -7,7 +7,7 @@ use yii\web\AssetBundle;
 
 class Asset extends AssetBundle
 {
-    public $sourcePath = '@vendor/uikit/uikit/dist';
+    public $sourcePath = '@bower/uikit/dist';
 
     public $css = [
         'css/uikit.min.css',
