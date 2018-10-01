@@ -12,7 +12,7 @@ namespace worstinme\uikit;
 
 use yii\web\AssetBundle;
 
-class Asset extends AssetBundle
+class IconAsset extends AssetBundle
 {
     /**
      * {@inheritdoc}
@@ -22,22 +22,15 @@ class Asset extends AssetBundle
     /**
      * {@inheritdoc}
      */
-    public $css = [
-        'css/uikit.min.css',
-    ];
-
-    /**
-     * {@inheritdoc}
-     */
     public $js = [
-        'js/uikit.min.js',
+        'js/uikit-icons.min.js',
     ];
 
     /**
      * {@inheritdoc}
      */
     public $depends = [
-        'yii\web\YiiAsset',
+        'worstinme\uikit\Asset',
     ];
 
 }
