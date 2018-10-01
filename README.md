@@ -65,9 +65,9 @@ ActiveField additional methods:
 ---------------
 The code below will generate (?) question icon, placed after label text, with information showed with uk-tooltip 
 ```php
-$form->field($model,'attribute')->label('label')->info('Additional info to the label of this field);
+$form->field($model,'attribute')->label('label')->info('Additional info to the label of this field');
 ```
-This will generate icon 'uk-icon="lock"' inside input field 
+This will generate <i uk-icon="lock"></i> inside input field 
 ```php
 $form->field($model,'attribute')->icon('lock');
 ```
