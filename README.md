@@ -6,26 +6,22 @@ Widgets & assets for a lightweight and modular front-end framework [UiKit](http:
 Installation of yii2-uikit Extension
 ------------------------------------
 
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/). Just run
-
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 You have to set in your project's composer.json to use this package, because of Uikit 3 RC version.
 
 ```json
 "minimum-stability": "dev",
 "prefer-stable":true,
 ```
-
-
+After this settings, just run
 ```
 composer require --prefer-dist worstinme/yii2-uikit:"dev-master"
 ```
 or add
-
 ```
 "worstinme/yii2-uikit": "dev-master"
 ```
-to the require section of your `composer.json` file.
-
+to the require section of your `composer.json` file and start update
 
 Assets usage exaple:
 -------------
