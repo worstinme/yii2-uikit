@@ -84,9 +84,6 @@ class ActiveField extends \yii\widgets\ActiveField
             'errorOptions' => [
                 'class' => 'uk-form-danger',
             ],
-            'inputOptions' => [
-                'class' => 'uk-input',
-            ],
             'iconOptions'=>[
                 'flip' => false, 'uikit' => true,
             ],
@@ -270,6 +267,42 @@ class ActiveField extends \yii\widgets\ActiveField
         if (!empty($hidden)) {
             $this->parts['{hidden}'] = $hidden;
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function textInput($options = [])
+    {
+        Html::addCssClass($this->inputOptions,'uk-input');
+        return parent::textInput($options);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function textarea($options = [])
+    {
+        Html::addCssClass($this->inputOptions,'uk-textarea');
+        return parent::textarea($options);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function checkbox($options = [], $enclosedByLabel = true)
+    {
+        Html::addCssClass($options,'uk-checkbox');
+        return parent::checkbox($options, $enclosedByLabel);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function dropDownList($items, $options = [])
+    {
+        Html::addCssClass($this->inputOptions,'uk-select');
+        return parent::dropDownList($items, $options);
     }
 
 }
