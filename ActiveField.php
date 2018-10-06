@@ -102,19 +102,19 @@ class ActiveField extends \yii\widgets\ActiveField
         }
 
         if ($instanceConfig['form']->grid) {
-            Html::addCssClass($config['options']['class'], 'uk-grid-margin');
+            Html::addCssClass($config['options'], 'uk-grid-margin');
             if (isset($instanceConfig['width'])) {
                 $classes = explode(" ", $instanceConfig['width']);
                 foreach ($classes as $class) {
-                    Html::addCssClass($config['options']['class'], 'uk-width-' . $class);
+                    Html::addCssClass($config['options'], 'uk-width-' . $class);
                 }
             }
         } else {
-            Html::addCssClass($config['options']['class'], 'uk-margin');
+            Html::addCssClass($config['options'], 'uk-margin');
             if (isset($instanceConfig['width'])) {
                 $classes = explode(" ", $instanceConfig['width']);
                 foreach ($classes as $class) {
-                    Html::addCssClass($config['inputOptions']['class'], 'uk-width-' . $class);
+                    Html::addCssClass($config['inputOptions'], 'uk-width-' . $class);
                 }
             }
         }
@@ -150,7 +150,7 @@ class ActiveField extends \yii\widgets\ActiveField
 
             if (!empty($this->parts['{icon}'])) {
                 if (strpos($this->template, '{icon}') === false) {
-                    Html::addCssClass($this->iconWrapperOptions['class'],'uk-position-relative');
+                    Html::addCssClass($this->iconWrapperOption,'uk-position-relative');
                     $this->template = str_replace("{input}", Html::tag('div', '{icon}{input}', $this->iconWrapperOptions), $this->template);
                 }
             }
@@ -171,7 +171,7 @@ class ActiveField extends \yii\widgets\ActiveField
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function label($label = null, $options = [])
     {
@@ -222,9 +222,9 @@ class ActiveField extends \yii\widgets\ActiveField
             $uikit = ArrayHelper::remove($options, 'uikit', true);
             $tag = ArrayHelper::remove($options, 'tag', 'span');
 
-            Html::addCssClass($options['class'], 'uk-form-icon');
+            Html::addCssClass($options, 'uk-form-icon');
             if (ArrayHelper::remove($options, 'flip', false)) {
-                Html::addCssClass($options['class'], 'uk-form-icon-flip');
+                Html::addCssClass($options, 'uk-form-icon-flip');
             }
 
             if ($uikit) {
@@ -271,6 +271,5 @@ class ActiveField extends \yii\widgets\ActiveField
             $this->parts['{hidden}'] = $hidden;
         }
     }
-
 
 }
