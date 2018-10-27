@@ -70,3 +70,38 @@ Icon can be placed in the right side of input field or changed to non uikit icon
 ```php
 $form->field($model,'attribute')->icon('<i class="fas fa-user"></i>',['flip'=>true,'uikit'=>false,'tag'=>'a','href'=>'http://example.com']);
 ```
+
+Alert widgets:
+---------------
+
+Alert renders an alert uikit component.
+ 
+For example,
+
+```php
+echo Alert::widget([
+  'type'=>'primary',
+  'body' => 'Say hello...',
+]);
+```
+
+The following example will show the content enclosed between the [[begin()]]
+and [[end()]] calls within the alert box:
+
+```php
+Alert::begin([
+  'type' => 'warning',
+  'closeButton'=>false,
+]);
+
+echo 'Say hello...';
+
+Alert::end();
+```
+
+And the AlertFlashes widget to automatically call alert widgets for existing flash messages stored in session
+
+```
+\worstinme\uikit\extend\AlertFlashes::widget();
+
+```
