@@ -170,9 +170,7 @@ class ActiveField extends \yii\widgets\ActiveField
             }
 
             if (!isset($this->parts['{beginLabel}'])) {
-                $this->parts['{beginLabel}'] = '';
-                $this->parts['{labelTitle}'] = '';
-                $this->parts['{endLabel}'] = '';
+                $this->label();
             }
 
             $content = strtr($this->template, $this->parts);
