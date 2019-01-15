@@ -189,6 +189,9 @@ class ActiveField extends \yii\widgets\ActiveField
     {
         if ($label === false) {
             $this->parts['{label}'] = '';
+            $this->parts['{beginLabel}'] = '';
+            $this->parts['{endLabel}'] = '';
+            $this->parts['{labelTitle}'] = '';
             return $this;
         }
 
