@@ -72,6 +72,9 @@ class ActiveField extends \yii\widgets\ActiveField
     protected function createLayoutConfig($instanceConfig)
     {
         $config = [
+            'options'=>[
+                //
+            ],
             'labelOptions' => [
                 'class' => 'uk-form-label'
             ],
