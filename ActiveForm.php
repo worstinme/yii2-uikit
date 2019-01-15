@@ -131,4 +131,12 @@ class ActiveForm extends \yii\widgets\ActiveForm
 
         parent::init();
     }
+
+    /**
+     * @return ActiveField
+     */
+    public function field($model, $attribute, $options = [])
+    {
+        return parent::field($model, $attribute, $options);
+    }
 }

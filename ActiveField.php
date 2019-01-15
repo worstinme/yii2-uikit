@@ -129,6 +129,16 @@ class ActiveField extends \yii\widgets\ActiveField
     {
         if ($content === null) {
 
+            if (!isset($this->parts['{input}'])) {
+                $this->textInput();
+            }
+            if (!isset($this->parts['{error}'])) {
+                $this->error();
+            }
+            if (!isset($this->parts['{hint}'])) {
+                $this->hint(null);
+            }
+
             if (strpos($this->template,'{label}') !== false) {
                 if (strpos($this->template,'{info}') === false) {
                     $this->template = str_replace('{label}','{beginLabel}{labelTitle}{info}{endLabel}', $this->template);
@@ -165,9 +175,13 @@ class ActiveField extends \yii\widgets\ActiveField
                 $this->parts['{endLabel}'] = '';
             }
 
+            $content = strtr($this->template, $this->parts);
+
+        } elseif (!is_string($content)) {
+            $content = call_user_func($content, $this);
         }
 
-        return parent::render($content);
+        return $this->begin() . "\n" . $content . "\n" . $this->end();
     }
 
     /**
@@ -181,16 +195,15 @@ class ActiveField extends \yii\widgets\ActiveField
         }
 
         $options = array_merge($this->labelOptions, $options);
-        if ($label !== null) {
-            $options['label'] = $label;
+
+        if ($label === null) {
+            $attribute = Html::getAttributeName($this->attribute);
+            $label = Html::encode($this->model->getAttributeLabel($attribute));
         }
 
         if ($this->_skipLabelFor) {
             $options['for'] = null;
         }
-
-        $attribute = Html::getAttributeName($this->attribute);
-        $label = Html::encode($this->model->getAttributeLabel($attribute));
 
         $this->parts['{beginLabel}'] = Html::beginTag('label', $options);
         $this->parts['{endLabel}'] = Html::endTag('label');
