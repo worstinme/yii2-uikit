@@ -50,6 +50,8 @@ class ActiveField extends \yii\widgets\ActiveField
      */
     public $infoOptions = [];
 
+    public $errorOptions = ['class' => 'help-block'];
+
     /**
      * {@inheritdoc}
      */
@@ -83,9 +85,6 @@ class ActiveField extends \yii\widgets\ActiveField
             ],
             'hintOptions' => [
                 'class' => 'uk-form-controls-text',
-            ],
-            'errorOptions' => [
-                'class' => 'uk-form-danger',
             ],
             'iconOptions'=>[
                 'flip' => false, 'uikit' => true,
