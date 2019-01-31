@@ -37,7 +37,7 @@ class Asset extends AssetBundle
      * {@inheritdoc}
      */
     public $depends = [
-        'yii\web\YiiAsset',
+
     ];
 
 }
