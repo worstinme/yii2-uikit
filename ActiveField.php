@@ -159,7 +159,7 @@ class ActiveField extends \yii\widgets\ActiveField
 
             if (!empty($this->parts['{icon}'])) {
                 if (strpos($this->template, '{icon}') === false) {
-                    Html::addCssClass($this->iconWrapperOption,'uk-position-relative');
+                    Html::addCssClass($this->iconWrapperOptions,'uk-position-relative');
                     $this->template = str_replace("{input}", Html::tag('div', '{icon}{input}', $this->iconWrapperOptions), $this->template);
                 }
             }
@@ -292,6 +292,14 @@ class ActiveField extends \yii\widgets\ActiveField
     {
         Html::addCssClass($this->inputOptions,'uk-input');
         return parent::textInput($options);
+    }
+    /**
+     * {@inheritdoc}
+     */
+    public function passwordInput($options = [])
+    {
+        Html::addCssClass($this->inputOptions,'uk-input');
+        return parent::passwordInput($options);
     }
 
     /**
